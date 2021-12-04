@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/coins">
+
+    <fragment
+        android:id="@+id/coins"
+        android:name="com.example.cryptocurrency.fragments.Coins"
+        android:label="fragment_coins"
+        tools:layout="@layout/fragment_coins" >
+
+        <action
+            android:id="@+id/action_coins_to_coinDetails"
+            app:destination="@id/coinDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/portfolio"
+        android:name="com.example.cryptocurrency.fragments.Portfolio"
+        android:label="fragment_portfolio"
+        tools:layout="@layout/fragment_portfolio" >
+        <action
+            android:id="@+id/action_portfolio_to_sellCoin"
+            app:destination="@id/sellCoin" />
+    </fragment>
+    <fragment
+        android:id="@+id/wallet"
+        android:name="com.example.cryptocurrency.fragments.Wallet"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" >
+        <action
+            android:id="@+id/action_wallet_to_chooseCurrencyDialog"
+            app:destination="@id/chooseCurrencyDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/coinDetails"
+        android:name="com.example.cryptocurrency.fragments.CoinDetails"
+        android:label="CoinDetails" >
+        <action
+            android:id="@+id/action_coinDetails_to_coins"
+            app:destination="@id/coins" />
+        <argument
+            android:name="coin_rank"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_coinDetails_to_addCoin"
+            app:destination="@id/addCoin" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addCoin"
+        android:name="com.example.cryptocurrency.fragments.AddCoin"
+        android:label="fragment_add_coin"
+        tools:layout="@layout/fragment_add_coin" >
+        <action
+            android:id="@+id/action_addCoin_to_coinDetails"
+            app:destination="@id/coinDetails"
+            app:popUpTo="@id/coinDetails" />
+        <argument
+            android:name="coinRank"
+            app:argType="integer" />
+        <argument
+            android:name="chosenfiat"
+            app:argType="com.example.cryptocurrency.model.Fiat" />
+    </fragment>
+    <dialog
+        android:id="@+id/chooseCurrencyDialog"
+        android:name="com.example.cryptocurrency.fragments.ChooseCurrencyDialog"
+        android:label="fragment_choose_currency_dialog"
+        tools:layout="@layout/fragment_choose_currency_dialog" >
+        <action
+            android:id="@+id/action_chooseCurrencyDialog_to_wallet"
+            app:destination="@id/wallet"
+            app:popUpTo="@id/wallet" />
+    </dialog>
+    <fragment
+        android:id="@+id/sellCoin"
+        android:name="com.example.cryptocurrency.fragments.SellCoin"
+        android:label="fragment_sell_coin"
+        tools:layout="@layout/fragment_sell_coin" >
+        <action
+            android:id="@+id/action_sellCoin_to_portfolio"
+            app:destination="@id/portfolio"
+            app:popUpTo="@id/portfolio" />
+        <argument
+            android:name="coinId"
+            app:argType="string" />
+        <argument
+            android:name="chosenFiat"
+            app:argType="com.example.cryptocurrency.model.Fiat" />
+
+    </fragment>
+
+</navigation>

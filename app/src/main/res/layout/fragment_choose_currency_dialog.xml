@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/Animation.Design.BottomSheetDialog"
+    tools:context=".fragments.ChooseCurrencyDialog">
+
+    <TextView
+        android:id="@+id/currency_dialog_tv"
+        android:layout_width="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:text="Choose the fiat currency you want your holdings to be measured in!"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/currency_dropdown_menu"
+        >
+
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/currency_dropdown_menu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginVertical="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currency_dialog_tv">
+
+        <AutoCompleteTextView
+            android:id="@+id/currency_AcTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:dropDownHeight="200dp"
+            android:text="USD" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/currency_dropdown_menu">
+
+        <Button
+            android:id="@+id/currency_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginVertical="32dp"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/currency_choose_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginVertical="32dp"
+            android:text="Choose" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

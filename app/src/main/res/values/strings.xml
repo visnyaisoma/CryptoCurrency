@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">CryptoCurrency</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="coins">Coins</string>
+    <string name="wallet">Wallet</string>
+    <string name="current_price">Current Price: </string>
+    <string name="rank">Rank:</string>
+    <string name="market_cap">Market cap:</string>
+    <string name="total_supply">Total supply:</string>
+    <string name="available_supply">Available supply:</string>
+    <string name="add_to_wallet">Add to Wallet</string>
+    <string name="purchase_amount">Purchase amount</string>
+    <string name="total_value">Total value:</string>
+    <string name="total_evaluation">Total evaluation:</string>
+    <string name="currency_logo">Currency logo</string>
+    <string name="sell">Sell</string>
+    <string name="log">Log</string>
+    <string name="_24h">24h</string>
+    <string name="_1w">1w</string>
+    <string name="_1m">1M</string>
+    <string name="_3m">3M</string>
+    <string name="_6m">6M</string>
+    <string name="_1y">1Y</string>
+    <string name="all">All</string>
 </resources>
